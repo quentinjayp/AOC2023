@@ -38,14 +38,9 @@ func main() {
 func get_digits(line string) (found_num int, err error) {
 	line = strings.ToLower(line)
 
-	line = strings.ReplaceAll(line, "oneight", "oneeight")
-	line = strings.ReplaceAll(line, "twone", "twoone")
-	line = strings.ReplaceAll(line, "threeight", "threeeight")
-	line = strings.ReplaceAll(line, "fiveight", "fiveeight")
-	line = strings.ReplaceAll(line, "sevenine", "sevennine")
-	line = strings.ReplaceAll(line, "eightwo", "eighttwo")
-	line = strings.ReplaceAll(line, "eighthree", "eightthree")
-	line = strings.ReplaceAll(line, "nineight", "nineeight")
+	line = strings.ReplaceAll(line, "eight", "e8t")
+	line = strings.ReplaceAll(line, "two", "t2o")
+	line = strings.ReplaceAll(line, "seven", "s7n")
 	re := regexp.MustCompile("([0-9]|one|two|three|four|five|six|seven|eight|nine)")
 	found_digits := re.FindAllString(line, -1)
 	first := word_to_digit(found_digits[0])
